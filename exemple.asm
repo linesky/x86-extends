@@ -2,9 +2,9 @@
 .text
 .global _main   
 _main:
-	push bp
-	mov bp,sp
-	sub sp,16
+	push ebp
+	mov ebp,esp
+	sub esp,64
 	mov eax,10
     push eax
 	push eax
@@ -14,6 +14,6 @@ _main:
 	push eax
 	call _prints
 	pop eax
-	mov sp,bp
-	pop bp
+	mov esp,ebp
+	pop ebp
 	ret
