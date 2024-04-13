@@ -1,18 +1,20 @@
-.intel_syntax
+.intel_syntax noprefix
 .text
-.global _main   
-_main:
+.extern prints
+.extern addss
+.global mains  
+mains:
 	push ebp
 	mov ebp,esp
 	sub esp,64
 	mov eax,10
-    push eax
+        push eax
 	push eax
-	call _addss
+	call addss
 	pop ebx
 	pop ebx
 	push eax
-	call _prints
+	call prints
 	pop eax
 	mov esp,ebp
 	pop ebp
